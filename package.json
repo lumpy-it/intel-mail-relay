@@ -1,0 +1,30 @@
+{
+  "name": "intel-mail-relay",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lumpy-it/intel-mail-relay.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lumpy-it/intel-mail-relay/issues"
+  },
+  "homepage": "https://github.com/lumpy-it/intel-mail-relay#readme",
+  "devDependencies": {
+    "@types/node": "^8.0.26",
+    "@types/request": "^2.0.3",
+    "@types/request-promise-native": "^1.0.6",
+    "typescript": "^2.5.2"
+  },
+  "dependencies": {
+    "eveonlinejs": "^2.0.2",
+    "request": "^2.81.0",
+    "request-promise-native": "^1.0.4"
+  }
+}
