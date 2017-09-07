@@ -3,7 +3,9 @@ MAINTAINER Lunedis
 
 WORKDIR /opt/intel-mail-relay
 
-COPY package.json package-lock.json .
+RUN apt-get update && apt-get install -y cron
+
+COPY package.json package-lock.json ./
 
 RUN npm install
 
@@ -14,7 +16,7 @@ COPY . .
 
 RUN npm run build
 
-RUN chmod 0644 /opt/intel-mail-relay/cron.sh
+RUN chmod +x /opt/intel-mail-relay/cron.sh
 RUN touch /var/log/cron.log
 
 CMD cron && tail -f /var/log/cron.log
