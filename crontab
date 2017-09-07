@@ -1,0 +1,1 @@
+*/15 * * * * root /opt/intel-mail-relay/cron.sh >> /var/log/cron.log 2>&1

@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lumpy-it/intel-mail-relay.git"
   },
-  "author": "",
+  "author": "Lunedis",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/lumpy-it/intel-mail-relay/issues"
