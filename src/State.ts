@@ -7,7 +7,7 @@ export default class State {
     constructor() {
         if(fs.existsSync('./state.json')) {
             let load = require('../state.json');
-            this.maxMessageID = load.maxMessageID;
+            this.maxMessageID = load.maxMessageID || {};
         } else {
             this.maxMessageID = {};
         }

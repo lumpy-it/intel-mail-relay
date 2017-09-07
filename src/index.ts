@@ -42,7 +42,6 @@ import * as request from 'request-promise-native';
 
                 allMails.push(mail);
             });
-            
             // set the new newest messsageID
             state.setMaxMessageID(key.keyID,Math.max(...ids));
         }
@@ -55,13 +54,13 @@ import * as request from 'request-promise-native';
                 auth: {
                     bearer: config.token
                 },
-                body: JSON.stringify(allMails)
+                json: allMails
             });
-            console.log(`Return code: ${response.statusCode}`);
+            console.log(`success code: ${response.statusCode}`);
+            
+            state.save();
         } catch (exception) {
-            console.log(`Return code: ${exception.statusCode}`);
+            console.log(`error code: ${exception.statusCode}`);
         }   
     }
-
-    state.save();
 })();
