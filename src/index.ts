@@ -37,6 +37,16 @@ import * as request from 'request-promise-native';
             mails.forEach((mail) => {
                 mail.body = mailBodiesResult.messages[mail.messageID].cdata;
                 mail.keyName = key.name;
+		if(mail.toListID != '') {
+		    let mailingList = mailingListsResult.mailingLists[mail.toListID];
+		    if(mailingList) {
+			mail.mailingListName = mailingList.displayName;
+		    } else {
+			mail.mailingListName = "unknown";
+		    }
+		} else {
+		    mail.mailingListName = '';
+		}
                 mail.mailingListName = (mail.toListID != '') ? 
                     mailingListsResult.mailingLists[mail.toListID].displayName : '';
 
